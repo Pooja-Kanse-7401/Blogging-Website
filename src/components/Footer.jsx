@@ -1,9 +1,28 @@
+import { useState } from "react";
 import logo from "../assets/images/logo.png"
 import { FaCopyright, FaFacebook } from "react-icons/fa6";
 import { FaSquareInstagram } from "react-icons/fa6";
 import { FaTwitter } from "react-icons/fa6";
 
 function Footer() {
+
+  const [contact, setContact] =  useState([{
+    name : "",
+    email : "",
+    message : ""
+  }])
+
+  const handleContact = () => {
+    setContact({
+      ...contact,
+      [e.target.name] : e.target.value
+    })
+  }
+
+  const submitContact = () =>{;
+
+    alert("submited")
+  }
   return (
     <>
       <div className="w-[100%] h-[80vh] md:h-[50vh] bg-zinc-900 px-[10%] text-white">
@@ -29,11 +48,17 @@ function Footer() {
             <h1 className="text-2xl font-semibold border-b-2 border-red-500 w-36">Get in touch</h1>
             <div className="flex flex-col">
               {/* <label htmlFor="name">Name</label> */}
-              <input type="text" id="name" placeholder="Enter your name..." required className="mt-4 border p-1 rounded-md  border-white bg-transparent cursor-pointer" />
+              <input type="text" value={contact.name} id="name" placeholder="Enter your name..." required 
+              onChange={handleContact}
+              className="mt-4 border p-1 rounded-md  border-white bg-transparent cursor-pointer" />
               {/* <label htmlFor="email">Email</label> */}
-              <input type="text" id="email" placeholder="Enter your email..." required className="mt-2 border p-1 rounded-md  border-white bg-transparent cursor-pointer" />
-              <textarea name="contact" id="contactMessage" placeholder="Message here..." className="mt-2 border p-1 rounded-md  border-white bg-transparent cursor-pointer"></textarea>
-              <button className="text-white bg-red-500 px-3 rounded-md p-1 mt-2  hover:bg-red-700 text-lg">Send</button>
+              <input type="text" value={contact.email} id="email" placeholder="Enter your email..." required 
+              onChange={handleContact}
+              className="mt-2 border p-1 rounded-md  border-white bg-transparent cursor-pointer" />
+              <textarea name="contact" value={contact.message} id="contactMessage" placeholder="Message here..." 
+              onChange={handleContact}
+              className="mt-2 border p-1 rounded-md  border-white bg-transparent cursor-pointer"></textarea>
+              <button onClick={submitContact} className="text-white bg-red-500 px-3 rounded-md p-1 mt-2  hover:bg-red-700 text-lg">Send</button>
             </div>
           </form>
         </div>

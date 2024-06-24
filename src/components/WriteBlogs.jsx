@@ -40,6 +40,13 @@ function WriteBlogs() {
           </div>
         </form>
       </div>
+
+      <div className="h-[80vh] w-[100%] bg-gradient-to-tr from-zinc-600 to-zinc-950 flex justify-center items-center flex-col">
+        <img src={val.file} alt="" />
+        <h1>{val.title}</h1>
+        <p>{val.blog}</p>
+      </div>
+      
     </>
   )
 }
