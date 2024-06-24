@@ -1,16 +1,11 @@
-// import img from "../assets/images/img.jpg"
-// import { Link } from "react-router-dom";
-// import { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
-import Data from "../components/Data.js"
 import { FaUser } from "react-icons/fa6";
-
-function Cards({blogs, selectCategory}) {
+// import Data from "./Data.js"
+function Cards({blogs}) {
     
     return (
         <>
             {
-                Data.splice(0,12).map((val, index) => {
+                blogs.map((val, index) => {
                     return (
                         <>
                             <div id={index} className="card w-64 m-2 shadow-md hover:shadow-gray-200 rounded-2xl">
@@ -23,7 +18,7 @@ function Cards({blogs, selectCategory}) {
                                     <p className="text-left text-xl font-semibold pl-2">{val.author}</p>
                                     </span>
                                     <p className=" py-2">Published on : {val.published_date}</p>
-                                    <Link to="/Blogs">Read more....</Link>
+                                    <p>Read more....</p>
                                 </div>
 
                             </div>

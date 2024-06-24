@@ -29,9 +29,9 @@ function Footer() {
             <h1 className="text-2xl font-semibold border-b-2 border-red-500 w-36">Get in touch</h1>
             <div className="flex flex-col">
               {/* <label htmlFor="name">Name</label> */}
-              <input type="text" id="name" placeholder="Enter your name..." className="mt-4 border p-1 rounded-md  border-white bg-transparent cursor-pointer" />
+              <input type="text" id="name" placeholder="Enter your name..." required className="mt-4 border p-1 rounded-md  border-white bg-transparent cursor-pointer" />
               {/* <label htmlFor="email">Email</label> */}
-              <input type="text" id="email" placeholder="Enter your email..." className="mt-2 border p-1 rounded-md  border-white bg-transparent cursor-pointer" />
+              <input type="text" id="email" placeholder="Enter your email..." required className="mt-2 border p-1 rounded-md  border-white bg-transparent cursor-pointer" />
               <textarea name="contact" id="contactMessage" placeholder="Message here..." className="mt-2 border p-1 rounded-md  border-white bg-transparent cursor-pointer"></textarea>
               <button className="text-white bg-red-500 px-3 rounded-md p-1 mt-2  hover:bg-red-700 text-lg">Send</button>
             </div>

@@ -1,5 +1,6 @@
-import Cards from "./Cards"
+// import Cards from "./Cards"
 import { Link } from "react-router-dom"
+import { FaUser } from "react-icons/fa6";
 import Data from "./Data"
 
 function Home() {
@@ -18,14 +19,35 @@ function Home() {
                         </ul>
                     </div>
                     <div className="flex justify-center items-center gap-5 flex-wrap">
-                        <Cards />
+                        {
+                            Data.map((val, index) => {
+                                return (
+                                    <>
+                                        <div id={index} className="card w-64 m-2 shadow-md hover:shadow-gray-200 rounded-2xl">
+                                            <img src={val.image} alt="" className="h-1/2 border-t-1 rounded-t-2xl" />
+
+                                            <div className=" bg-white p-2 border-b-0 rounded-b-2xl">
+                                                <h1 className="text-black font-semibold pt-3">{val.title}</h1>
+                                                <span className="flex justify-start items-center pt-2">
+                                                    <FaUser />
+                                                    <p className="text-left text-xl font-semibold pl-2">{val.author}</p>
+                                                </span>
+                                                <p className=" py-2">Published on : {val.published_date}</p>
+                                                <p>Read more....</p>
+                                            </div>
+
+                                        </div>
+                                    </>
+                                )
+                            })
+                        }
                     </div>
                 </div>
                 <div className="h-[90%] w-[90%] m-2 md:w-[25%] rounded-md bg-black/10 backdrop-filter backdrop-blur-lg bg-opacity-10 md:overflow-hidden overflow-y-scroll no-scrollbar">
                     <h1 className="m-3 text-2xl font-semibold">Letast Blogs</h1>
                     <div className="flex justify-center flex-col items-center">
                         {
-                            Data.splice(0,3).map((val, index) => {
+                            Data.splice(0, 3).map((val, index) => {
                                 return (
                                     <>
                                         <div id={index} className="card w-[90%] m-2 shadow-md hover:shadow-gray-500 ">
@@ -44,7 +66,7 @@ function Home() {
                     <h1 className="m-3 text-2xl font-semibold">Popular Blogs</h1>
                     <div className="flex justify-center flex-col items-center">
                         {
-                            Data.splice(0,3).map((val, index) => {
+                            Data.splice(0, 3).map((val, index) => {
                                 return (
                                     <>
                                         <div id={index} className="card w-[90%] m-2 shadow-md hover:shadow-gray-500 ">
