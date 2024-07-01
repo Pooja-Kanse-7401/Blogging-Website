@@ -26,7 +26,7 @@ function Contact() {
         <div className="flex justify-center items-center flex-col w-[90%] md:w-[50%] h-[90%] md:h-[80%] bg-white rounded-md backdrop-filter backdrop-blur-lg bg-opacity-10">
           <h1 className="text-3xl text-white font-bold">Contact Us</h1>
           <p className="text-white w-[80%] md:w-[70%] text-center pt-5">Got a question? We'd love to hear from you. Send a message and we'll respond as soon as possible.</p>
-          <form action="" className="flex flex-col w-[75%] md:w-[60%]">
+          <form action="https://formspree.io/f/xpwaalvr" method="POST" className="flex flex-col w-[75%] md:w-[60%]">
             <label htmlFor="name" className="text-white py-1 pt-5">Name<sup>*</sup></label>
             <input type="text" value={contact.name} name="name" id="name" required 
             onChange={handleContact}

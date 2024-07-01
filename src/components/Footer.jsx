@@ -44,7 +44,8 @@ function Footer() {
             <li className="hover:text-red-500">Entertainment</li>
           </ul>
           </div>
-          <form action="">
+
+          <form action="https://formspree.io/f/xpwaalvr" method="POST">
             <h1 className="text-2xl font-semibold border-b-2 border-red-500 w-36">Get in touch</h1>
             <div className="flex flex-col">
               {/* <label htmlFor="name">Name</label> */}
@@ -62,7 +63,9 @@ function Footer() {
             </div>
           </form>
         </div>
+
         <hr/>
+        
         <div className="flex justify-between items-center mt-5">
           <h1 className="flex items-center"><FaCopyright className="mr-2 cursor-pointer"/>Blogging-2024</h1>
           <ul className="flex">

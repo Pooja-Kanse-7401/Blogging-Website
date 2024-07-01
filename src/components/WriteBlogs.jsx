@@ -1,10 +1,16 @@
 import { useState } from "react";
 import { FaPlus } from "react-icons/fa6";
+import { useDispatch } from "react-redux";
+import { addBlog } from "../Utils/blogSlice";
+import { nanoid } from "@reduxjs/toolkit";
+// import BlogPage from "./BlogPage"
 
 
 function WriteBlogs() {
 
+  const dispatch = useDispatch();
   const [val, setVal] = useState([{
+    id : nanoid(),
     file : "",
     title : "",
     blog : ""
@@ -16,22 +22,23 @@ function WriteBlogs() {
       [e.target.name]: e.target.value
     })
     console.log("handel ok")
+    console.log("Value : ",val)
   }
-
+  
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log("Sending to DataBase")
+    dispatch(WriteBlogs(val))
   }
 
   return (
     <>
       <div className="h-[80vh] w-[100%] bg-gradient-to-tr from-zinc-600 to-zinc-950 flex justify-center items-center flex-col">
-        <form action="">
+        <form action="" onSubmit={handleSubmit}>
           <div className="flex w-[70vw] justify-between item-center">
             <label htmlFor="fileInput" className=""><FaPlus className="border-2 font-bold text-4xl p-1 rounded-full border-white text-white cursor-pointer" /></label>
             <input type="file" value={val.file} name="file" id="fileInput" className="hidden" onChange={handleChange}/>
             <input type="text" value={val.title} name="title" placeholder="Title" autoFocus={true} className="bg-transparent mx-2 w-[90%] text-3xl px-3 border-2 border-white rounded-md outline-none text-white cursor-pointer" onChange={handleChange}/>
-            <button className="text-white bg-red-500 px-3 rounded-md p-1 hover:bg-red-700 text-lg" onClick={handleSubmit}>Publish</button>
+            <button className="text-white bg-red-500 px-3 rounded-md p-1 hover:bg-red-700 text-lg" onClick={() =>dispatch(addBlog(val))}>Publish</button>
           </div>
           <div>
             <textarea name="blog" id="writeBlog" placeholder="Tell your story...." type="text" value={val.blog}
@@ -41,12 +48,8 @@ function WriteBlogs() {
         </form>
       </div>
 
-      <div className="h-[80vh] w-[100%] bg-gradient-to-tr from-zinc-600 to-zinc-950 flex justify-center items-center flex-col">
-        <img src={val.file} alt="" />
-        <h1>{val.title}</h1>
-        <p>{val.blog}</p>
-      </div>
       
+      {/* <BlogPage img={val.file} heading={val.title} blog={val.blog} /> */}
     </>
   )
 }
