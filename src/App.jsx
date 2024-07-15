@@ -8,12 +8,7 @@ import Blogs from './components/Blogs'
 import WriteBlogs from './components/WriteBlogs'
 import Contact from './components/Contact'
 import Footer from './components/Footer'
-// import Regester from './components/Register'
-// import Login from './components/Login'
 import BlogPage from './components/BlogPage'
-
-// Background Image
-// https://images.unsplash.com/photo-1671824269494-5844fb7f482b?q=80&w=1932&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
 
 function App() {
 
@@ -32,11 +27,7 @@ function App() {
           <Route path='/Write' element={<WriteBlogs />} />
           <Route path='/Contact' element={<Contact />} />
           <Route path='/BlogPage' element={<BlogPage/>}/>
-          {/* <Route path='/Regester' element={<Regester />} /> */}
-          {/* <Route path='/Login' element={<Login />} /> */}
         </Routes>
-        {/* <Regester/> */}
-        {/* <Login/> */}
         <Footer/>
       </Router>
     </>

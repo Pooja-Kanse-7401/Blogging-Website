@@ -1,4 +1,4 @@
-import { Link, NavLink } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
@@ -147,14 +147,38 @@ function NavbarComponent() {
                         <NavLink to="/BlogPage" className={({ isActive }) => `cursor-pointer hover:text-red-700 hover:border-b-2 border-red-600 text-lg text-gray-800 ${isActive ? "text-red-700 border-b-2" : "text-gray-800"}`}>Your Blog</NavLink>
                     </ul>
 
-                    <ul className="flex justify-center items-center gap-4 font-semibold flex-col">
-                        <span className="flex">
+                    <ul className="flex justify-center items-center gap-2 font-semibold flex-col">
+                        <span className="flex pt-3">
                             <li className="cursor-pointer hover:text-red-700 hover:border-b-2 border-red-600 text-xl text-gray-800 p-1"><FaFacebook /></li>
                             <li className="cursor-pointer hover:text-red-700 hover:border-b-2 border-red-600 text-xl text-gray-800 p-1"><FaSquareInstagram /></li>
                             <li className="cursor-pointer hover:text-red-700 hover:border-b-2 border-red-600 text-xl text-gray-800 p-1"><FaTwitter /></li>
                         </span>
-                        <button onClick={toggleRegister} className="text-white bg-red-500 px-3 rounded-md p-1 hover:bg-red-700 text-lg">Register</button>
-                        <button onClick={toggleLogin} className="text-white bg-red-500 px-3 rounded-md p-1 hover:bg-red-700 text-lg">Login</button>
+                        
+                        <div>
+                                {registerHide && (
+                                    <button
+                                        onClick={toggleRegister}
+                                        className="text-white bg-red-500 px-3 rounded-md p-1 hover:bg-red-700 text-lg"
+                                    >
+                                        Register
+                                    </button>
+                                )}
+                            </div>
+
+                            <div>
+                                {userLogin ? (
+                                    <span className="flex justify-center items-center capitalize text-xl">
+                                        <FaUser className="mr-2" />{newname?.fname}
+                                    </span>
+                                ) : (
+                                    <button
+                                        onClick={toggleLogin}
+                                        className="text-white bg-red-500 px-3 rounded-md p-1 hover:bg-red-700 text-lg"
+                                    >
+                                        Login
+                                    </button>
+                                )}
+                            </div>
                     </ul>
                 </div>
             </nav>
