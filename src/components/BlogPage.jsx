@@ -4,26 +4,12 @@ import { addBlog, removeBlog } from '../Utils/blogSlice'
 
 
 function BlogPage() {
-  // const newblog = JSON.parse(localStorage.getItem("blog"));
-
-
-
-// const [data,setData] = useState(newblog)
-
-
-
-
 
   const cardData = useSelector((store) => store.blogs.card)
   console.log(cardData)
 
   const dispatch = useDispatch()
-
-
-
-  // useEffect(()=>{
-  //   alert(newblog.blog)
-  // })
+ 
 
   return (
     <>
