@@ -48,11 +48,9 @@ function Footer() {
           <form action="https://formspree.io/f/xpwaalvr" method="POST">
             <h1 className="text-2xl font-semibold border-b-2 border-red-500 w-36">Get in touch</h1>
             <div className="flex flex-col">
-              {/* <label htmlFor="name">Name</label> */}
               <input type="text" value={contact.name} id="name" placeholder="Enter your name..." required 
               onChange={handleContact}
               className="mt-4 border p-1 rounded-md  border-white bg-transparent cursor-pointer" />
-              {/* <label htmlFor="email">Email</label> */}
               <input type="text" value={contact.email} id="email" placeholder="Enter your email..." required 
               onChange={handleContact}
               className="mt-2 border p-1 rounded-md  border-white bg-transparent cursor-pointer" />

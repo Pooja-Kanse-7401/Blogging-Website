@@ -1,5 +1,5 @@
 import { FaUser } from "react-icons/fa6";
-// import Data from "./Data.js"
+
 function Cards({blogs}) {
     
     return (

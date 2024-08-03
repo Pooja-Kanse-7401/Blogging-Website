@@ -23,8 +23,7 @@ function NavbarComponent() {
 
     const [openLogin, setOpenLogin] = useState(false);
     const toggleLogin = () => setOpenLogin(!openLogin);
-
-
+    
 // Register 
 
     const [register, setRegister] = useState({

@@ -1,9 +1,7 @@
-
 import './App.css'
 import NavbarComponent from './components/NavbarComponent'
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom"
 import Home from './components/Home'
-import About from './components/About'
 import Blogs from './components/Blogs'
 import WriteBlogs from './components/WriteBlogs'
 import Contact from './components/Contact'
@@ -22,7 +20,6 @@ function App() {
         <NavbarComponent />
         <Routes>
           <Route path='/' element={<Home />} />
-          <Route path='/About' element={<About />} />
           <Route path='/Blogs' element={<Blogs />} />
           <Route path='/Write' element={<WriteBlogs />} />
           <Route path='/Contact' element={<Contact />} />

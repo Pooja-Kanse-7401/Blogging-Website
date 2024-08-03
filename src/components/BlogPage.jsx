@@ -1,6 +1,6 @@
-import React, { useEffect, useState } from 'react'
+import React from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-import { addBlog, removeBlog } from '../Utils/blogSlice'
+import { removeBlog } from '../Utils/blogSlice'
 
 
 function BlogPage() {
@@ -16,11 +16,10 @@ function BlogPage() {
 
       <div className="h-[200vh] w-[100%] bg-gradient-to-tr from-zinc-600 to-zinc-950 flex justify-start items-center flex-col overflow-y-scroll no-scrollbar ">
         <h1 className='text-4xl m-5 text-white'>Your Blogs...</h1>
-        <div className='w-[100%] h-[95%] flex justify-center items-start flex-wrap '>
+        <div className='w-[90%] h-[95%] flex justify-center items-start flex-wrap '>
           {
             cardData?.map((val, i) => {
               return (
-                // <li>{val.blog}</li>
                 <>
                   <div id={i} className='text-white w-[90%] md:w-[40%] h-[70vh] m-2 border-none bg-black/15'>
                     {/* <span className='w-[100%] h-[50%] '>
@@ -40,7 +39,6 @@ function BlogPage() {
           }
         </div>
 
-        {/* <h1 className='text-white '> kjdflk</h1> */}
       </div>
 
     </>

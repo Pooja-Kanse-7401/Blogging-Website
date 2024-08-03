@@ -1,12 +1,8 @@
-// import React from 'react'
+import React from 'react'
 import Cards from "./Cards"
 import { FaMagnifyingGlass } from "react-icons/fa6";
 import { useState } from "react";
-// import { data } from "autoprefixer";
 import Data from "./Data.js"
-// import BlogPage from "./BlogPage.jsx";
-
-
 
 
 function Blogs() {
@@ -40,7 +36,7 @@ function Blogs() {
           </button>
 
         </div>
-        {/* <BlogPage /> */}
+        
         <div className="flex justify-center items-center flex-wrap w-[85%] gap-3">
 
           <Cards blogs={filteredBlogs} />
